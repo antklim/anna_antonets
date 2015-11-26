@@ -1,0 +1,99 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+<div class="container">
+  <div class="panel panel-custom">
+    <div class="panel-heading">
+      <h3 class="panel-title">About</h3>
+    </div>
+    <div class="panel-body">
+      <ul ng-repeat="wow in about">
+        <li>{{wow}}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="panel panel-custom">
+    <div class="panel-heading">
+      <h3 class="panel-title">Skills</h3>
+    </div>
+    <div class="panel-body">
+      <div ng-repeat="skill in skills">
+        <p>
+          <strong>{{skill.type}}</strong>
+          <ul ng-repeat="sk in skill.data">
+            <li>{{sk}}</li>
+          </ul>
+        </p><br>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-custom">
+    <div class="panel-heading">
+      <h3 class="panel-title">Education</h3>
+    </div>
+    <div class="panel-body">
+      <div ng-repeat="edu in education">
+        <dl>
+          <dt>{{edu.university}}, {{edu.country}}</dt>
+          <dd>{{edu.type}}, {{edu.area}}</dd>
+          <dd>{{edu.startDate | date:'MMMM yyyy'}} - {{edu.endDate | date:'MMMM yyyy'}}</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-custom">
+    <div class="panel-heading">
+      <h3 class="panel-title">Certificates</h3>
+    </div>
+    <div class="panel-body">
+      <div ng-repeat="cert in certificates">
+        <p>
+          <strong>{{cert.name}}</strong>, {{cert.authority}}
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-custom">
+    <div class="panel-heading">
+      <h3 class="panel-title">Publications</h3>
+    </div>
+    <div class="panel-body">
+      <div ng-repeat="pub in publications">
+        <p>
+          <strong>{{pub.name}}</strong>, {{pub.authors}}, <i>{{pub.publisher}}</i>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-custom">
+    <div class="panel-heading">
+      <h3 class="panel-title">Conferences</h3>
+    </div>
+    <div class="panel-body">
+      <div ng-repeat="conf in conferences">
+        <p>
+          <strong>{{conf.name}}</strong>, {{conf.place}}, (<i>{{conf.role}}</i>)
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-custom">
+    <div class="panel-heading">
+      <h3 class="panel-title">Languages</h3>
+    </div>
+    <div class="panel-body">
+      <ul class="list-unstyled" ng-repeat="language in languages">
+        <li><p><strong>{{language.name}}</strong>, {{language.level}}</p></li>
+      </ul>
+    </div>
+  </div>
+  <div class="panel panel-custom">
+    <div class="panel-heading">
+      <h3 class="panel-title">Interests</h3>
+    </div>
+    <div class="panel-body">
+      <ul class="list-unstyled" ng-repeat="interest in interests">
+        <li><p>{{interest}}</p></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div ng-include="'components/footer/footer.html'"></div>
