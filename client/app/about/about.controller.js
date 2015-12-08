@@ -5,9 +5,10 @@
     .module('resumeFrontApp')
     .controller('AboutCtrl', AboutCtrl);
 
-  AboutCtrl.$inject = ['$scope', '$http'];
+  AboutCtrl.$inject = ['$scope', '$http', '$rootScope', '$state'];
 
-  function AboutCtrl($scope, $http) {
+  function AboutCtrl($scope, $http, $rootScope, $state) {
+    $rootScope.title = $state.current.title;
     $scope.aboutData = [];
 
     $http

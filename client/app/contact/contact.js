@@ -10,7 +10,8 @@
       .state('contact', {
         url: '/contact',
         templateUrl: 'app/contact/contact.html',
-        controller: 'ContactCtrl'
+        controller: 'ContactCtrl',
+        title: 'Contact Me'
       });
   }
 })();

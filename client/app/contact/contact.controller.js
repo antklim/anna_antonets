@@ -5,9 +5,10 @@
     .module('resumeFrontApp')
     .controller('ContactCtrl', ContactCtrl);
 
-  ContactCtrl.$inject = ['$scope', '$http'];
+  ContactCtrl.$inject = ['$scope', '$http', '$rootScope', '$state'];
 
-  function ContactCtrl($scope, $http) {
+  function ContactCtrl($scope, $http, $rootScope, $state) {
+    $rootScope.title = $state.current.title;
     $http
       .get('/api/about')
       .success(function(aboutData) {

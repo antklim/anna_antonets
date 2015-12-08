@@ -7,6 +7,8 @@ describe('Controller: AboutCtrl', function () {
 
   var AboutCtrl;
   var scope;
+  var state = { current: { title: 'About Me Title' } };
+  var rootScope = {};
   var $httpBackend;
 
   // Initialize the controller and a mock scope
@@ -26,12 +28,19 @@ describe('Controller: AboutCtrl', function () {
 
     scope = $rootScope.$new();
     AboutCtrl = $controller('AboutCtrl', {
-      $scope: scope
+      $scope: scope,
+      $state: state,
+      $rootScope: rootScope
     });
   }));
 
   it('should attach about data to the scope', function () {
     $httpBackend.flush();
     expect(scope.aboutData.length).toBe(2);
+  });
+
+  it('should attach title to rootScope', function () {
+    $httpBackend.flush();
+    expect(rootScope.title).toEqual('About Me Title');
   });
 });
