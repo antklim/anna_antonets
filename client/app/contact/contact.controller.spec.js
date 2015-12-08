@@ -7,6 +7,8 @@ describe('Controller: ContactCtrl', function () {
 
   var ContactCtrl;
   var scope;
+  var state = { current: { title: 'Contact Me Title' } };
+  var rootScope = {};
   var $httpBackend;
 
   var contact = {
@@ -53,7 +55,9 @@ describe('Controller: ContactCtrl', function () {
 
     scope = $rootScope.$new();
     ContactCtrl = $controller('ContactCtrl', {
-      $scope: scope
+      $scope: scope,
+      $state: state,
+      $rootScope: rootScope
     });
   }));
 
@@ -61,5 +65,10 @@ describe('Controller: ContactCtrl', function () {
     $httpBackend.flush();
     expect(scope.contact).toEqual(contact.data);
     expect(scope.location).toEqual(location.data);
+  });
+
+  it('should attach title to rootScope', function () {
+    $httpBackend.flush();
+    expect(rootScope.title).toEqual('Contact Me Title');
   });
 });

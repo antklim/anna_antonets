@@ -10,7 +10,8 @@
       .state('about', {
         url: '/about',
         templateUrl: 'app/about/about.html',
-        controller: 'AboutCtrl'
+        controller: 'AboutCtrl',
+        title: 'About Me'
       });
   }
 })();
