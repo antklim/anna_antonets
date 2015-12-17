@@ -4,6 +4,11 @@
 
 'use strict';
 
+var fs = require('fs');
+var path = require('path');
+var http = require('http');
+var https = require('https');
+
 // Set default node environment to development
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
@@ -12,7 +17,7 @@ var config = require('./config/environment');
 
 // Setup server
 var app = express();
-var server = require('http').createServer(app);
+var server = config.options ? https.createServer(config.options, app) : http.createServer(app);
 require('./config/express')(app);
 require('./routes')(app);
 

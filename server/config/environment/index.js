@@ -1,6 +1,7 @@
 'use strict';
 
 var path = require('path');
+var fs = require('fs');
 var _ = require('lodash');
 
 function requiredProcessEnv(name) {
@@ -25,6 +26,11 @@ var all = {
   secrets: {
     session: 'resume-front-secret'
   },
+
+  options: {
+    key: fs.readFileSync(path.join(__dirname, '../../certs/server.key')),
+    cert: fs.readFileSync(path.join(__dirname, '../../certs/server.crt'))
+  }
 
 };
 
