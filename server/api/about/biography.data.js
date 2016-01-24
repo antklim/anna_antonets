@@ -22,10 +22,6 @@ exports = module.exports = [
         data: 'a.antnts@gmail.com'
       },
       {
-        type: 'phone',
-        data: '+7(928) 7705538'
-      },
-      {
         type: 'skype',
         data: 'anna.antonets'
       }
