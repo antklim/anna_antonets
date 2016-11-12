@@ -17,7 +17,7 @@
     $httpProvider.interceptors.push('authInterceptor');
   })
 
-  .value('copyRight', '2015 Anna Antonets')
+  .value('copyRight', '2015 - 2016 Anna Antonets')
   .value('linkedin', 'https://ru.linkedin.com/in/anna-antonets-33956059/en')
   .value('myName', 'Anna Antonets')
   .value('myNick', 'Anna Antonets')
